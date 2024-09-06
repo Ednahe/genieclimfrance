@@ -19,6 +19,7 @@ ul {
   --main-green : #3ead3c;
   --big-width : 1200px;
   --box-shadow : rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --filter-green: invert(56%) sepia(70%) saturate(435%) hue-rotate(70deg) brightness(85%) contrast(98%);
 }
 
 /* HEADER */
@@ -59,7 +60,7 @@ header {
 .info:hover, .svg:hover {
   cursor: pointer;
   color: var(--main-green);
-  filter: invert(56%) sepia(70%) saturate(435%) hue-rotate(70deg) brightness(85%) contrast(98%);
+  filter: var(--filter-green);
 }
 
 .btn-info {
@@ -112,6 +113,10 @@ ul > li {
   width: 30px;
   height: 30px;
   cursor: pointer;
+}
+
+.burger:hover {
+  filter: var(--filter-green);
 }
 
 @media (max-width: 950px) {
@@ -178,6 +183,7 @@ ul > li {
   background: rgba(255, 255, 255, 0.75);
   padding: 40px;
   max-width: 70%;
+  border-radius: 5px;
 }
 
 /* PRESENTATION  */
@@ -234,7 +240,13 @@ h1 {
 /* SLIDE  */
 
 .title-slider {
+  font-size: 36px;
   text-align: center;
+}
+
+.p-slider {
+  text-align: center;
+  font-size: 18px;
 }
 
 .img-slide {
@@ -246,7 +258,6 @@ h1 {
 }
 
 .container-slide {
-  width: 100%;
   max-width: 600px;       
   margin: 0 auto;
   padding: 20px;
@@ -268,9 +279,100 @@ h1 {
 .swiper-button {
   cursor: pointer;
   padding: 10px;
+  z-index: 15;
 }
 
 .arrow-slider {
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
+  z-index: 15;
+}
+
+.arrow-slider:hover {
+  filter: var(--filter-green);
+}
+
+@media (max-width: 600px) {
+  .content {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .title-slider {
+    font-size: 28px;
+  }
+}
+
+/* FOOTER  */
+
+footer {
+  background: #212121;
+  padding: 100px 0;
+  width: 100%;
+}
+
+.contain-footer {
+  max-width: var(--big-width);
+  margin: 0 auto;
+}
+
+.info-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+h4, .react {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.react:hover {
+  color: var(--main-green);
+}
+
+.contact > h4 {
+  text-align: center;
+}
+
+.contain-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contain-icon-footer {
+  display: flex;
+  flex-direction: row;
+  color: #ffffff;
+  align-items: center;
+  gap: 10px;
+}
+
+.contain-icon-footer > img {
+  width: 24px;
+  height: 24px;
+  filter: invert(100%) sepia(0%) saturate(7470%) hue-rotate(116deg) brightness(109%) contrast(109%);
+}
+
+.contain-icon-footer > img:hover {
+  filter: var(--filter-green);
+}
+
+@media (max-width: 600px) {
+  footer {
+    padding: 50px 0;
+  }
+
+  h4 {
+    text-align: center;
+  }
+
+  .info-footer {
+    flex-direction: column;
+  }
+
+  .contain-contact {
+    align-items: center;
+  }
 }
